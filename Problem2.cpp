@@ -1,11 +1,16 @@
 // Problem: Skip Iterator
-//  Time Complexity : O(n) where is n is the number of followees
-//  Space Complexity : O(T + F + U) where t is total tweets, f is total
-//  followers, U is total users Did this code successfully run on Leetcode : Yes
+//  Time Complexity : next(), hasNext(), skip - Amortized O(1)
+//  Space Complexity : O(k) no of elements to be skipped
 //  Any problem you faced while coding this : No
 
 // Your code here along with comments explaining your approach in three
 // sentences only
+// 1. We use skipmap to record the value to be skipped and the frequency
+// 2. While skipping, we take care if we are at the value that needs to skipped
+// we advance in that case, otherwise we increase the skip frequency in the map
+// 3. In advance, we first reset the nextel and then check if the current val is
+// in skipmap, if yes we decrease the count and remove if zero, otherwise we
+// change nextel = el and return
 
 #include <bits/stdc++.h>
 using namespace std;
